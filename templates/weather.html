@@ -1,0 +1,132 @@
+<html>
+    <head>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawChart2);
+        google.charts.setOnLoadCallback(drawChart3);
+        google.charts.setOnLoadCallback(drawChart4);
+        google.charts.setOnLoadCallback(drawChart5);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Country', 'Total Confirmed', {role: 'style'}],
+            ['United States of America', 17206647 , '#c542f5'],
+            ['Canada', 492556, '#c542f5'],
+            ['United Kingdom', 1954268, '#c542f5'],
+            ['China', 194734, '#c542f5']
+            ]);
+            var options = {
+            chart: {
+                title: 'Confirmed cases in developed Countries',
+                subtitle: 'Countries : United States of America ,Canada ,China, United Kingdom',
+                width: 600,
+                height: 400,
+            },
+            bars: 'horizontal' // Required for Material Bar Charts.
+            };
+          var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+             chart.draw(data, options);
+        }
+        function drawChart2() {
+            var data2 = google.visualization.arrayToDataTable([
+                ['Country', 'Total Deaths',{ role: 'style' }],
+                ['United States of America', 10699, '#b87333'],
+                ['Canada', 13939 ,'#b87333'],
+                ['United Kingdom', 66150, '#b87333'],
+                ['China', 14759, '#b87333']
+            ]);
+            var options = {
+
+                title: 'Total Deaths ',
+                subtitle: 'Countries: United States of America,Canada,China, United Kingdom',
+                width: 600,
+                height: 400,
+
+            bars: 'vertical' // Required for Material Bar Charts.
+            };
+            var chart2 = new google.visualization.BarChart(document.getElementById("barchart_values1"));
+             chart2.draw(data2, options);
+            }
+            function drawChart3() {
+            var data3 = google.visualization.arrayToDataTable([
+            ['Country', 'Total Recovered', {role: 'style'}],
+            ['United States of America', 7406 ,'#78f542' ],
+            ['Canada', 403667, '#78f542'],
+            ['United Kingdom', 4123, '#78f542'],
+            ['China', 88429, '#78f542']
+            ]);
+
+            var options = {
+
+                title: 'Total Recovered ',
+                subtitle: 'Countries:United States of America,Canada,China, United Kingdom',
+                 width: 600,
+                height: 400,
+            bars: 'horizontal' // Required for Material Bar Charts.
+            };
+             var chart3 = new google.visualization.BarChart(document.getElementById("barchart_values2"));
+               chart3.draw(data3, options);
+
+            }
+            function drawChart4() {
+            var data4 = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2017', 1000, 400, 200],
+          ['2018', 1170, 460, 250],
+          ['2019', 660, 1120, 300],
+          ['2020', 1030, 140, 50]
+        ]);
+
+            var options = {
+
+                 chart: {
+            title: 'GDP Growth of United Kingdom',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+            var chart4 = new google.charts.Bar(document.getElementById('barchart_material4'));
+            chart4.draw(data4, google.charts.Bar.convertOptions(options));
+            }
+        function drawChart5() {
+
+
+            var data = google.visualization.arrayToDataTable([
+             ['Task', 'Hours per Day'],
+          ['Work',     9],
+          ['Eat',      3],
+          ['Commute',  1],
+          ['Watch TV', 5],
+          ['Sleep',    7]
+        ]);
+
+
+           var options = {
+               title: 'Daily Activities of an Individual'
+            };
+
+            var chart5 = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart5.draw(data, options);
+          }
+        </script>
+    </head>
+    <body>
+        <h1 align="center" , style="color: darkblue">Top 3 News Charts</h1>
+         <h2 align="centre" , style="color: brown">Chart - 1</h2>
+        <div id="barchart_values" style="width: 900px; height: 500px;"></div>
+        <h2 style="color: brown">Chart - 2</h2>
+        <div id="barchart_values1" style="width: 900px; height: 500px;"></div>
+         <h2 align="centre", style="color: brown">Chart - 3</h2>
+        <div id="barchart_values2" style="width: 900px; height: 500px;"></div>
+         <h2 align= "centre", style="color: brown">Chart - 4</h2>
+        <div id="barchart_material4" style="width: 900px; height: 500px;"></div>
+        <h2 align= "centre", style="color: brown">Chart - 5</h2>
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </body>
+
+    </html>
